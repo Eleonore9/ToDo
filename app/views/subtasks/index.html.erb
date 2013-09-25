@@ -13,7 +13,7 @@
   <tbody>
     <% @subtasks.each do |subtask| %>
       <tr>
-        <td><%= subtask.content %></td
+        <td><%= subtask.content %></td>
         <td><%= subtask.task_id %></td>
         <td><%= link_to 'Show', subtask %></td>
         <td><%= link_to 'Edit', edit_subtask_path(subtask) %></td>
