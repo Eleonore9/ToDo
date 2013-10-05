@@ -2,4 +2,8 @@
 
 <%= render 'form' %>
 
+<% @task.each do |task| %>
+<%= task.id %>
+<% end %>
+
 <%= link_to 'Back', subtasks_path %>

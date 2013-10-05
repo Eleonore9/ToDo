@@ -15,6 +15,7 @@ class SubtasksController < ApplicationController
   # GET /subtasks/new
   def new
     @subtask = Subtask.new
+    @task = Task.all
   end
 
   # GET /subtasks/1/edit
@@ -24,11 +25,14 @@ class SubtasksController < ApplicationController
   # POST /subtasks
   # POST /subtasks.json
   def create
+    binding.pry
     @subtask = Subtask.new(subtask_params)
-p subtask_params
+    @subtask.task_id = params["task_id"]
+  subtask_params
 
     respond_to do |format|
       if @subtask.save
+        binding.pry
         format.html { redirect_to @subtask, notice: 'Subtask was successfully created.' }
         format.json { render action: 'show', status: :created, location: @subtask }
       else
