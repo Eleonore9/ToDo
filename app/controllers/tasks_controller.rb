@@ -15,6 +15,8 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    #trying to create task and substask at the same time
+    @subtask = Subtask.all
   end
 
   # GET /tasks/1/edit

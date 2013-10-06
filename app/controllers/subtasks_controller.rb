@@ -25,14 +25,14 @@ class SubtasksController < ApplicationController
   # POST /subtasks
   # POST /subtasks.json
   def create
-    binding.pry
+    #binding.pry
     @subtask = Subtask.new(subtask_params)
     @subtask.task_id = params["task_id"]
   subtask_params
 
     respond_to do |format|
       if @subtask.save
-        binding.pry
+        #binding.pry
         format.html { redirect_to @subtask, notice: 'Subtask was successfully created.' }
         format.json { render action: 'show', status: :created, location: @subtask }
       else

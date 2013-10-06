@@ -12,6 +12,14 @@
     </div>
   </div>
 
+  <div class="control-group">
+    <%= f.label "Choose a subtask: " %><br>
+    <% @subtask.each do |subtask| %>
+      <%= radio_button_tag(subtask, "Subtask") %>
+      <%= label_tag(subtask.id, subtask.content) %>
+    <% end %>
+  </div>
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
