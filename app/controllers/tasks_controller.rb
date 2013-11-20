@@ -19,6 +19,9 @@ class TasksController < ApplicationController
     @subtask = Subtask.all
   end
 
+  def test
+  end
+
   # GET /tasks/1/edit
   def edit
   end
