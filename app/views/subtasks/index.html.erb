@@ -15,8 +15,8 @@
       <tr>
         <td><%= subtask.content %></td>
         <td><%= subtask.task_id %></td>
-        <td><%= link_to 'Show', subtask %></td>
-        <td><%= link_to 'Edit', edit_subtask_path(subtask) %></td>
+        <td><%= link_to 'Show', subtask, :class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Edit', edit_subtask_path(subtask), :class => 'btn btn-mini' %></td>
         <td><%= link_to 'Destroy', subtask, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

@@ -1,0 +1,11 @@
+<div class="page-header">
+	<h1>
+		Welcome to <em>ToDo</em>!
+	</h1>
+	<h3>well, that's just another tasks list (for now!)</h3>
+</div>
+
+
+<%= link_to t('.tasks', :default => t("helpers.links.tasks")),
+            tasks_path,
+            :class => 'btn' %>
