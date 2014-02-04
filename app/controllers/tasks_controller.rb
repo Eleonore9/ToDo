@@ -15,8 +15,9 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
-    #trying to create task and substask at the same time
-    @subtask = Subtask.all
+    ##trying to create task and substask at the same time
+    #@subtask = Subtask.all
+    @subtask = Subtask.new
   end
 
   def test
@@ -30,6 +31,8 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
+    ##trying to create task and substask at the same time
+    @subtask = Subtask.new(subtask_params)
 
     respond_to do |format|
       if @task.save

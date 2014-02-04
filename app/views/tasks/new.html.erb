@@ -4,11 +4,13 @@
 </div>
 <%= render :partial => 'form' %>
 
-<% @subtask.each do |subtask| %>
-<%= subtask.id %>
+<% if False %>
+	<% @subtask.each do |subtask| %>
+	<%= subtask.id %>
 	<% if subtask.content %>
 		<%= subtask.content %>
 	<% else %>
 		<%= "no content" %>
+	<% end %>
 	<% end %>
 <% end %>
