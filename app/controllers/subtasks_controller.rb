@@ -28,7 +28,6 @@ class SubtasksController < ApplicationController
     #binding.pry
     @subtask = Subtask.new(subtask_params)
     @subtask.task_id = params["task_id"]
-  subtask_params
 
     respond_to do |format|
       if @subtask.save

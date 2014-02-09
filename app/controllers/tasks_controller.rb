@@ -30,9 +30,15 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
+    print '****************'
     @task = Task.new(task_params)
+    print task_params
     ##trying to create task and substask at the same time
-    @subtask = Subtask.new(subtask_params)
+    if subtask_params
+      print subtask_params
+      @subtask = Subtask.new(subtask_params)
+      @task.subtask_id = params["subtask_id"]
+    end
 
     respond_to do |format|
       if @task.save

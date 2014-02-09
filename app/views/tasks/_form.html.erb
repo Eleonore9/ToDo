@@ -13,8 +13,26 @@
   </div>
 
 
+  <%= form_for(@subtask) do |f| %>
+    <% if @subtask.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@subtask.errors.count, "error") %> prohibited this subtask from being saved:</h2>
+        <ul>
+        <% @subtask.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :subtask %><br>
+      <%= f.text_field :content %>
+    </div>
+  <% end %>
+
+
   <div class="form-actions">
-    <%= link_to t('.new', :default => t("helpers.links.new")), new_subtask_path(@subtask), :class => 'btn btn-info' %>
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 tasks_path, :class => 'btn' %>
